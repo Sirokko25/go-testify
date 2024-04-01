@@ -27,7 +27,7 @@ func TestMainHandlerUnExistCity(t *testing.T) {
 	handler.ServeHTTP(responseRecorder, req)
 
 	require.Equal(t, http.StatusBadRequest, responseRecorder.Code)
-	expected := `count missing`
+	expected := `wrong city value`
 	assert.Equal(t, expected, responseRecorder.Body.String())
 }
 func TestMainHandlerWhenCountMoreThanTotal(t *testing.T) {
